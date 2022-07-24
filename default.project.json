@@ -1,0 +1,31 @@
+{
+  "name": "building",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "common": {
+        "$path": "src/common",
+        "$ignoreUnknownInstances": true,
+
+        "Packages": {
+          "$path": "Packages"
+        }
+      }
+    },
+
+    "ServerScriptService": {
+      "server": {
+        "$path": "src/server"
+      }
+    },
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "client": {
+          "$path": "src/client"
+        }
+      }
+    }
+  }
+}
