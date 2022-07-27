@@ -20,7 +20,7 @@ function PlayerMovementController:ChangeState(stateFunction: (...any?) -> (), ..
         self.CurrentState = "None"
     end
 
-    stateFunction(...)
+    stateFunction(Knit.Player.Character, ...)
     :timeout(self.StateTimeout)
     :andThen(resetState)
     :catch(warn)
@@ -38,11 +38,11 @@ function PlayerMovementController:KnitStart()
     local PlayerStates = self.deps.PlayerStates
     self.bindings = {
 
-        sprintIn = bind({ Enum.KeyCode.LeftControl; }, function()
+        sprintIn = bind({ Enum.KeyCode.LeftShift; }, function()
             self:ChangeState(PlayerStates.Sprint, true)
         end, "Began");
 
-        sprintOut = bind({ Enum.KeyCode.LeftControl; }, function()
+        sprintOut = bind({ Enum.KeyCode.LeftShift; }, function()
             self:ChangeState(PlayerStates.Sprint, false)
         end, "Ended");
 

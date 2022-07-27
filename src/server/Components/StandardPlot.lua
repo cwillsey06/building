@@ -9,7 +9,6 @@ local Component = require(Packages.component)
 local StandardPlot = Component.new { Tag = "StandardPlot"; }
 
 function StandardPlot:AssignOwner(player: Player)
-    assert(not self.Owner, "StandardPlot.Owner is immutable prior to first assignment")
     self.Owner = player
     player.RespawnLocation = self.Instance.PlotSpawnLocation
 end
